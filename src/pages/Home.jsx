@@ -9,6 +9,8 @@ import systemIcon from "../assets/icons/application/system.png";
 import imageIcon from "../assets/icons/application/image.png";
 import reactIcon from "../assets/icons/technology/react.png";
 import databaseIcon from "../assets/icons/technology/database.png";
+import DeveloperJourney from "../components/journey/DeveloperJourney";
+import DeveloperPlayground from "../components/playground/DeveloperPlayground";
 
 const stats = [
   {
@@ -69,12 +71,16 @@ function Home() {
   return (
     <section className="page-shell pt-8 md:pt-10 lg:pt-12">
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-x-14 xl:gap-x-20">
-        <motion.img
-          src={logo}
-          alt="GLH"
-          className="mx-auto h-10 w-auto mix-blend-multiply md:h-11 lg:col-start-1 lg:row-start-1 lg:mx-0 lg:justify-self-start"
+        <motion.div
+          className="logo-plate mx-auto lg:col-start-1 lg:row-start-1 lg:mx-0 lg:justify-self-start"
           {...contentMotion}
-        />
+        >
+          <img
+            src={logo}
+            alt="GLH"
+            className="h-10 w-auto mix-blend-multiply md:h-11"
+          />
+        </motion.div>
 
         <motion.img
           src={portrait}
@@ -124,16 +130,20 @@ function Home() {
             key={stat.label}
             className="rounded-card border border-line bg-cream-raised px-5 py-6 text-center shadow-soft transition duration-200 ease-out hover:-translate-y-0.5 hover:border-wood-deep motion-reduce:transition-none motion-reduce:hover:translate-y-0"
           >
-            <img
-              src={stat.icon}
-              alt=""
-              className="mx-auto h-12 w-12 object-contain mix-blend-multiply"
-            />
+            <span className="icon-plate">
+              <img
+                src={stat.icon}
+                alt=""
+                className="h-12 w-12 object-contain mix-blend-multiply"
+              />
+            </span>
             <p className="mt-3 font-display text-3xl text-walnut">{stat.value}</p>
             <p className="mt-2 text-stone">{stat.label}</p>
           </li>
         ))}
       </ul>
+
+      <DeveloperJourney />
 
       <section className="mt-16 sm:mt-20">
         <h2 className="text-3xl">Technical Focus</h2>
@@ -143,11 +153,13 @@ function Home() {
               key={area.title}
               className="rounded-card border border-line bg-cream-raised px-5 py-6 shadow-soft transition duration-200 ease-out hover:-translate-y-0.5 hover:border-wood-deep motion-reduce:transition-none motion-reduce:hover:translate-y-0"
             >
-              <img
-                src={area.icon}
-                alt=""
-                className="h-12 w-12 object-contain mix-blend-multiply"
-              />
+              <span className="icon-plate">
+                <img
+                  src={area.icon}
+                  alt=""
+                  className="h-12 w-12 object-contain mix-blend-multiply"
+                />
+              </span>
               <h3 className="mt-4 text-lg leading-snug">{area.title}</h3>
               <p className="mt-4 font-display text-sm text-olive">Focus</p>
               <p className="mt-1 text-sm leading-relaxed text-stone">
@@ -157,6 +169,8 @@ function Home() {
           ))}
         </ul>
       </section>
+
+      <DeveloperPlayground />
     </section>
   );
 }

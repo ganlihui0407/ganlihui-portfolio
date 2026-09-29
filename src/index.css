@@ -7,17 +7,89 @@
   --color-wood-deep: #d2c0a8;
   --color-walnut: #6b442c;
   --color-walnut-deep: #4e301c;
+  --color-button: #6b442c;
+  --color-button-deep: #4e301c;
   --color-olive: #5c6844;
   --color-olive-soft: #e7ebdf;
   --color-charcoal: #2c2926;
   --color-stone: #6e675f;
   --color-line: #e4d8c8;
+  --color-on-walnut: #fbf8f2;
 
   --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
 
   --shadow-soft: 0 16px 36px -24px rgb(78 48 28 / 0.45);
   --radius-card: 0.875rem;
+}
+
+/* Dark values override the same tokens. Components keep their existing class names. */
+html[data-theme="dark"] {
+  --color-cream: #1c1814;
+  --color-cream-raised: #26211c;
+  --color-wood: #342c26;
+  --color-wood-deep: #4a4036;
+  --color-walnut: #e6d0bc;
+  --color-olive: #a3b08c;
+  --color-olive-soft: #2c3328;
+  --color-charcoal: #f4eee6;
+  --color-stone: #c9bfb4;
+  --color-line: #3f362e;
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* Dark mode only. Light mode keeps an empty container so the current blend is unchanged. */
+.logo-plate,
+.icon-plate {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  align-self: flex-start;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  border-radius: 0.85rem;
+  transition:
+    background-color 280ms ease,
+    box-shadow 280ms ease;
+}
+
+html[data-theme="dark"] .logo-plate,
+html[data-theme="dark"] .icon-plate {
+  isolation: isolate;
+  overflow: hidden;
+  background-color: rgb(246 241 232 / 0.46);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 0 0 1px rgb(246 241 232 / 0.34),
+    0 8px 18px -14px rgb(0 0 0 / 0.5);
+}
+
+html[data-theme="dark"] header nav .icon-plate {
+  border-radius: 999px;
+  background-color: rgb(246 241 232 / 0.38);
+  box-shadow: 0 0 0 1px rgb(246 241 232 / 0.22);
+}
+
+html[data-theme="dark"] header nav a:hover .icon-plate {
+  background-color: rgb(246 241 232 / 0.78);
+  box-shadow: 0 0 0 1px rgb(163 176 140 / 0.75);
+}
+
+html[data-theme="dark"] footer .icon-plate {
+  border-radius: 999px;
+  background-color: rgb(246 241 232 / 0.42);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-plate,
+  .icon-plate {
+    transition: none;
+  }
 }
 
 @layer base {
@@ -35,6 +107,29 @@
     line-height: 1.65;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    transition:
+      background-color 280ms ease,
+      color 280ms ease,
+      border-color 280ms ease;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  li,
+  a,
+  span,
+  article,
+  header,
+  footer,
+  nav,
+  input {
+    transition:
+      background-color 280ms ease,
+      color 280ms ease,
+      border-color 280ms ease;
   }
 
   h1,
@@ -57,6 +152,23 @@
     html {
       scroll-behavior: auto;
     }
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    li,
+    a,
+    span,
+    article,
+    header,
+    footer,
+    nav,
+    input {
+      transition: none;
+    }
   }
 }
 
@@ -74,8 +186,8 @@
     justify-content: center;
     gap: 0.5rem;
     border-radius: 0.75rem;
-    background-color: var(--color-walnut);
-    color: var(--color-cream-raised);
+    background-color: var(--color-button);
+    color: var(--color-on-walnut);
     padding: 0.72rem 1.05rem;
     font-family: var(--font-display);
     font-size: 0.94rem;
@@ -87,7 +199,7 @@
   }
 
   .btn-primary:hover {
-    background-color: var(--color-walnut-deep);
+    background-color: var(--color-button-deep);
   }
 
   .btn-secondary {

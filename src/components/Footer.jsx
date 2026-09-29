@@ -31,11 +31,13 @@ function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-12 sm:px-8">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-xl">
-            <img
-              src={logo}
-              alt="GLH"
-              className="h-12 w-auto mix-blend-multiply"
-            />
+            <span className="logo-plate">
+              <img
+                src={logo}
+                alt="GLH"
+                className="h-12 w-auto mix-blend-multiply"
+              />
+            </span>
             <p className="mt-5 font-display text-2xl font-medium tracking-tight text-charcoal">
               {profile.name}
             </p>
@@ -56,11 +58,13 @@ function Footer() {
                     ? { target: "_blank", rel: "noreferrer" }
                     : {})}
                 >
-                  <img
-                    src={link.icon}
-                    alt=""
-                    className="h-7 w-7 shrink-0 object-contain mix-blend-multiply"
-                  />
+                  <span className="icon-plate">
+                    <img
+                      src={link.icon}
+                      alt=""
+                      className="h-7 w-7 shrink-0 object-contain mix-blend-multiply"
+                    />
+                  </span>
                   {link.label}
                 </a>
               </li>

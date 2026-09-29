@@ -46,11 +46,13 @@ function Contact() {
                 ? { target: "_blank", rel: "noreferrer" }
                 : {})}
             >
-              <img
-                src={item.icon}
-                alt=""
-                className="h-11 w-11 object-contain mix-blend-multiply"
-              />
+              <span className="icon-plate">
+                <img
+                  src={item.icon}
+                  alt=""
+                  className="h-11 w-11 object-contain mix-blend-multiply"
+                />
+              </span>
               <span className="mt-3 font-display text-sm text-olive">
                 {item.label}
               </span>

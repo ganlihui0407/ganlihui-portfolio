@@ -56,11 +56,13 @@ function Navbar() {
     <header className="sticky top-0 z-40 border-b border-line bg-cream">
       <div className="mx-auto grid h-[4.5rem] max-w-6xl grid-cols-[1fr_auto] items-center gap-4 px-6 sm:px-8 md:grid-cols-[1fr_auto_1fr]">
         <NavLink to="/" end className="shrink-0" aria-label="Gan Li Hui, home">
-          <img
-            src={logo}
-            alt=""
-            className="h-12 w-auto mix-blend-multiply sm:h-14"
-          />
+          <span className="logo-plate">
+            <img
+              src={logo}
+              alt=""
+              className="h-12 w-auto mix-blend-multiply sm:h-14"
+            />
+          </span>
         </NavLink>
 
         <nav
@@ -74,11 +76,13 @@ function Navbar() {
               end={link.end}
               className={desktopLinkClass}
             >
-              <img
-                src={link.icon}
-                alt=""
-                className="h-5 w-5 shrink-0 object-contain mix-blend-multiply"
-              />
+              <span className="icon-plate">
+                <img
+                  src={link.icon}
+                  alt=""
+                  className="h-5 w-5 shrink-0 object-contain mix-blend-multiply"
+                />
+              </span>
               {link.label}
             </NavLink>
           ))}
@@ -123,11 +127,13 @@ function Navbar() {
                 end={link.end}
                 className={mobileLinkClass}
               >
-                <img
-                  src={link.icon}
-                  alt=""
-                  className="h-5 w-5 shrink-0 object-contain mix-blend-multiply"
-                />
+                <span className="icon-plate">
+                  <img
+                    src={link.icon}
+                    alt=""
+                    className="h-5 w-5 shrink-0 object-contain mix-blend-multiply"
+                  />
+                </span>
                 {link.label}
               </NavLink>
             ))}

@@ -100,11 +100,13 @@ function ProjectCard({ project, isOpen, onToggle }) {
       <div className="lg:grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.15fr)]">
         <div className="flex min-h-44 items-center justify-center bg-wood/50 px-6 py-12 text-center lg:min-h-72">
           <div>
-            <img
-              src={project.icon}
-              alt=""
-              className="mx-auto h-14 w-14 object-contain mix-blend-multiply"
-            />
+            <span className="icon-plate">
+              <img
+                src={project.icon}
+                alt=""
+                className="h-14 w-14 object-contain mix-blend-multiply"
+              />
+            </span>
             <p className="mt-4 font-display text-sm text-olive">Preview</p>
             <p className="mt-2 font-display text-xl text-charcoal">
               Project Preview Coming Soon
