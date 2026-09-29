@@ -1,23 +1,29 @@
 import { Download } from "lucide-react";
 import SectionTitle from "../components/SectionTitle";
 import resume from "../assets/resume/GanLiHui Resume.pdf";
+import emailIcon from "../assets/icons/social/email.png";
+import linkedinIcon from "../assets/icons/social/linkedin.png";
+import githubIcon from "../assets/icons/social/github.png";
 
 const contacts = [
   {
     label: "Email",
     value: "ganlihui0704@gmail.com",
     href: "mailto:ganlihui0704@gmail.com",
+    icon: emailIcon,
   },
   {
     label: "LinkedIn",
     value: "linkedin.com/in/li-hui-gan-b2b6b530b",
     href: "https://www.linkedin.com/in/li-hui-gan-b2b6b530b",
+    icon: linkedinIcon,
     external: true,
   },
   {
     label: "GitHub",
     value: "github.com/ganlihui0407",
     href: "https://github.com/ganlihui0407",
+    icon: githubIcon,
     external: true,
   },
 ];
@@ -40,7 +46,14 @@ function Contact() {
                 ? { target: "_blank", rel: "noreferrer" }
                 : {})}
             >
-              <span className="font-display text-sm text-olive">{item.label}</span>
+              <img
+                src={item.icon}
+                alt=""
+                className="h-11 w-11 object-contain mix-blend-multiply"
+              />
+              <span className="mt-3 font-display text-sm text-olive">
+                {item.label}
+              </span>
               <span className="mt-3 break-words text-charcoal">{item.value}</span>
             </a>
           </li>

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import SectionTitle from "../components/SectionTitle";
+import systemIcon from "../assets/icons/application/system.png";
+import imageIcon from "../assets/icons/application/image.png";
 
 const projects = [
   {
@@ -12,6 +14,7 @@ const projects = [
       "The system focuses on creating a practical digital solution using modern software development approaches.",
     ],
     technologies: ["React", "Database", "System Development"],
+    icon: systemIcon,
     caseStudy: [
       {
         label: "Project Goal",
@@ -47,6 +50,7 @@ const projects = [
       "User Experience",
       "Application Design",
     ],
+    icon: imageIcon,
     caseStudy: [
       {
         label: "Project Goal",
@@ -70,6 +74,7 @@ const projects = [
       "A system development project focusing on managing job-related information and application processes.",
     ],
     technologies: ["System Development", "Database", "Application Design"],
+    icon: systemIcon,
     caseStudy: [
       {
         label: "Project Goal",
@@ -95,7 +100,12 @@ function ProjectCard({ project, isOpen, onToggle }) {
       <div className="lg:grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.15fr)]">
         <div className="flex min-h-44 items-center justify-center bg-wood/50 px-6 py-12 text-center lg:min-h-72">
           <div>
-            <p className="font-display text-sm text-olive">Preview</p>
+            <img
+              src={project.icon}
+              alt=""
+              className="mx-auto h-14 w-14 object-contain mix-blend-multiply"
+            />
+            <p className="mt-4 font-display text-sm text-olive">Preview</p>
             <p className="mt-2 font-display text-xl text-charcoal">
               Project Preview Coming Soon
             </p>

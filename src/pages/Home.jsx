@@ -1,32 +1,49 @@
 import { Link } from "react-router-dom";
 import { Download } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
-import logo from "../assets/icons/glh_logo.jpg.png";
+import logo from "../assets/brand/glh_logo.jpg.png";
 import portrait from "../assets/profile/GanLiHui.jpg.png";
 import resume from "../assets/resume/GanLiHui Resume.pdf";
+import documentIcon from "../assets/icons/document/document.png";
+import systemIcon from "../assets/icons/application/system.png";
+import imageIcon from "../assets/icons/application/image.png";
+import reactIcon from "../assets/icons/technology/react.png";
+import databaseIcon from "../assets/icons/technology/database.png";
 
 const stats = [
-  { value: "5+", label: "Professional Certificates" },
-  { value: "3", label: "Software Projects" },
-  { value: "AI", label: "Application Development Interest" },
+  {
+    value: "5+",
+    label: "Professional Certificates",
+    icon: documentIcon,
+  },
+  { value: "3", label: "Software Projects", icon: systemIcon },
+  {
+    value: "AI",
+    label: "Application Development Interest",
+    icon: imageIcon,
+  },
 ];
 
 const focusAreas = [
   {
     title: "Software Engineering",
     focus: "Software design, development process, and problem solving",
+    icon: systemIcon,
   },
   {
     title: "Web Application Development",
     focus: "React, JavaScript, responsive user interfaces",
+    icon: reactIcon,
   },
   {
     title: "AI Application Development",
     focus: "Applying AI technologies into practical software solutions",
+    icon: imageIcon,
   },
   {
     title: "System Development",
     focus: "Database, application architecture, and system design",
+    icon: databaseIcon,
   },
 ];
 
@@ -105,9 +122,14 @@ function Home() {
         {stats.map((stat) => (
           <li
             key={stat.label}
-            className="rounded-card border border-line bg-cream-raised px-5 py-6 text-center shadow-soft"
+            className="rounded-card border border-line bg-cream-raised px-5 py-6 text-center shadow-soft transition duration-200 ease-out hover:-translate-y-0.5 hover:border-wood-deep motion-reduce:transition-none motion-reduce:hover:translate-y-0"
           >
-            <p className="font-display text-3xl text-walnut">{stat.value}</p>
+            <img
+              src={stat.icon}
+              alt=""
+              className="mx-auto h-12 w-12 object-contain mix-blend-multiply"
+            />
+            <p className="mt-3 font-display text-3xl text-walnut">{stat.value}</p>
             <p className="mt-2 text-stone">{stat.label}</p>
           </li>
         ))}
@@ -121,7 +143,12 @@ function Home() {
               key={area.title}
               className="rounded-card border border-line bg-cream-raised px-5 py-6 shadow-soft transition duration-200 ease-out hover:-translate-y-0.5 hover:border-wood-deep motion-reduce:transition-none motion-reduce:hover:translate-y-0"
             >
-              <h3 className="text-lg leading-snug">{area.title}</h3>
+              <img
+                src={area.icon}
+                alt=""
+                className="h-12 w-12 object-contain mix-blend-multiply"
+              />
+              <h3 className="mt-4 text-lg leading-snug">{area.title}</h3>
               <p className="mt-4 font-display text-sm text-olive">Focus</p>
               <p className="mt-1 text-sm leading-relaxed text-stone">
                 {area.focus}

@@ -6,6 +6,7 @@ import operatingSystems from "../assets/certificates/Coursera Operating System.j
 import networking from "../assets/certificates/Coursera The Bit and Bytes of Computer Networking Certificate.jpg.png";
 import codeNection from "../assets/certificates/Code Nection Participants 2024.jpg.png";
 import gdscHackathon from "../assets/certificates/Google Developer Students Club APU - GDSC Certified Google Workspace Hackathon 2024.jpg.png";
+import documentIcon from "../assets/icons/document/document.png";
 
 const categories = [
   {
@@ -85,7 +86,14 @@ function Certificates() {
       <div className="mt-12 space-y-16 sm:space-y-20">
         {categories.map((category) => (
           <section key={category.title}>
-            <h2 className="text-3xl">{category.title}</h2>
+            <h2 className="flex items-center gap-3 text-3xl">
+              <img
+                src={documentIcon}
+                alt=""
+                className="h-8 w-8 shrink-0 object-contain mix-blend-multiply"
+              />
+              {category.title}
+            </h2>
             <ul className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
               {category.items.map((item) => (
                 <li key={item.name}>

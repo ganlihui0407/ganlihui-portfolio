@@ -1,15 +1,20 @@
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Download, Menu, X } from "lucide-react";
-import logo from "../assets/icons/glh_logo.jpg.png";
+import logo from "../assets/brand/glh_logo.jpg.png";
 import resume from "../assets/resume/GanLiHui Resume.pdf";
+import homeIcon from "../assets/icons/navigation/home.png";
+import aboutIcon from "../assets/icons/navigation/about.png";
+import projectsIcon from "../assets/icons/navigation/projects.png";
+import certificatesIcon from "../assets/icons/navigation/certificates.png";
+import contactIcon from "../assets/icons/navigation/contact.png";
 
 const links = [
-  { to: "/", label: "Home", end: true },
-  { to: "/about", label: "About" },
-  { to: "/projects", label: "Projects" },
-  { to: "/certificates", label: "Certificates" },
-  { to: "/contact", label: "Contact" },
+  { to: "/", label: "Home", end: true, icon: homeIcon },
+  { to: "/about", label: "About", icon: aboutIcon },
+  { to: "/projects", label: "Projects", icon: projectsIcon },
+  { to: "/certificates", label: "Certificates", icon: certificatesIcon },
+  { to: "/contact", label: "Contact", icon: contactIcon },
 ];
 
 function ResumeButton({ className = "" }) {
@@ -26,7 +31,7 @@ function ResumeButton({ className = "" }) {
 }
 
 function desktopLinkClass({ isActive }) {
-  return `nav-link relative py-1 ${
+  return `nav-link relative inline-flex items-center gap-1.5 py-1 ${
     isActive
       ? "nav-link-active after:absolute after:inset-x-0 after:-bottom-2 after:h-0.5 after:rounded-full after:bg-olive"
       : ""
@@ -34,7 +39,7 @@ function desktopLinkClass({ isActive }) {
 }
 
 function mobileLinkClass({ isActive }) {
-  return `rounded-lg px-3 py-3 font-display text-base font-medium transition-colors duration-200 ${
+  return `flex items-center gap-2.5 rounded-lg px-3 py-3 font-display text-base font-medium transition-colors duration-200 ${
     isActive ? "bg-olive-soft text-olive" : "text-charcoal hover:bg-wood"
   }`;
 }
@@ -59,7 +64,7 @@ function Navbar() {
         </NavLink>
 
         <nav
-          className="hidden items-center gap-8 justify-self-center md:flex"
+          className="hidden items-center gap-5 justify-self-center md:flex lg:gap-7"
           aria-label="Primary"
         >
           {links.map((link) => (
@@ -69,6 +74,11 @@ function Navbar() {
               end={link.end}
               className={desktopLinkClass}
             >
+              <img
+                src={link.icon}
+                alt=""
+                className="h-5 w-5 shrink-0 object-contain mix-blend-multiply"
+              />
               {link.label}
             </NavLink>
           ))}
@@ -113,6 +123,11 @@ function Navbar() {
                 end={link.end}
                 className={mobileLinkClass}
               >
+                <img
+                  src={link.icon}
+                  alt=""
+                  className="h-5 w-5 shrink-0 object-contain mix-blend-multiply"
+                />
                 {link.label}
               </NavLink>
             ))}
