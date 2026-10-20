@@ -2,7 +2,6 @@ import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import SectionTitle from "../components/SectionTitle";
 import systemIcon from "../assets/icons/application/system.png";
-import imageIcon from "../assets/icons/application/image.png";
 import peaceoneHome from "../assets/projects/peaceone/peaceone-home.png";
 import peaceoneLogin from "../assets/projects/peaceone/peaceone-login.png";
 import peaceoneStudentDashboard from "../assets/projects/peaceone/peaceone-student-dashboard.png";
@@ -10,6 +9,13 @@ import peaceoneSkillGapAnalysis from "../assets/projects/peaceone/peaceone-skill
 import peaceoneLearningRecommendations from "../assets/projects/peaceone/peaceone-learning-recommendations.png";
 import peaceoneEmployerDashboard from "../assets/projects/peaceone/peaceone-employer-dashboard.png";
 import peaceoneAdminDashboard from "../assets/projects/peaceone/peaceone-admin-dashboard.png";
+import healthcareHome from "../assets/projects/healthcare-app/healthcare-home.png";
+import healthcareSearch from "../assets/projects/healthcare-app/healthcare-search.png";
+import healthcareMap from "../assets/projects/healthcare-app/healthcare-map.png";
+import healthcareFacilityDetails from "../assets/projects/healthcare-app/healthcare-facility-details.png";
+import healthcareComparison from "../assets/projects/healthcare-app/healthcare-comparison.png";
+import healthcareNearby from "../assets/projects/healthcare-app/healthcare-nearby.png";
+import healthcareFavourites from "../assets/projects/healthcare-app/healthcare-favourites.png";
 
 const peaceoneScreenshots = [
   { src: peaceoneHome, title: "Homepage", alt: "PeaceOne homepage" },
@@ -38,6 +44,44 @@ const peaceoneScreenshots = [
     src: peaceoneAdminDashboard,
     title: "Administrator dashboard",
     alt: "PeaceOne administrator dashboard",
+  },
+];
+
+const healthcareScreenshots = [
+  {
+    src: healthcareHome,
+    title: "Home",
+    alt: "Healthcare Accessibility Application home screen",
+  },
+  {
+    src: healthcareSearch,
+    title: "Search",
+    alt: "Healthcare facility search listing 4,131 facilities",
+  },
+  {
+    src: healthcareMap,
+    title: "Map",
+    alt: "Map showing 698 mapped healthcare facilities",
+  },
+  {
+    src: healthcareFacilityDetails,
+    title: "Facility details",
+    alt: "Healthcare facility details screen",
+  },
+  {
+    src: healthcareComparison,
+    title: "Comparison",
+    alt: "Side-by-side comparison of healthcare facilities",
+  },
+  {
+    src: healthcareNearby,
+    title: "Nearby facilities",
+    alt: "Nearby healthcare facilities screen",
+  },
+  {
+    src: healthcareFavourites,
+    title: "Favourites",
+    alt: "Saved favourite healthcare facilities",
   },
 ];
 
@@ -93,26 +137,41 @@ const projects = [
     name: "Healthcare Accessibility Application",
     type: "Coursework Project",
     description: [
-      "A software application project focusing on improving accessibility and user experience through digital solutions.",
+      "A Flutter application for exploring healthcare facilities in Malaysia.",
     ],
-    technologies: [
-      "Software Development",
-      "User Experience",
-      "Application Design",
-    ],
-    icon: imageIcon,
-    caseStudy: [
+    technologies: ["Flutter"],
+    screenshots: healthcareScreenshots,
+    sections: [
       {
-        label: "Project Goal",
-        text: "Develop a software application that improves accessibility and provides a better user experience through digital solutions.",
+        title: "Project Overview",
+        text: "A Flutter application for exploring healthcare facilities in Malaysia, with search, maps, facility details, comparison, nearby facilities, and favourites.",
       },
       {
-        label: "Problem",
-        text: "Details will be added after project documentation is completed.",
+        title: "Problem Addressed",
+        text: "Finding a healthcare facility can mean moving between a directory, a map, and a personal shortlist. This application gathers those tasks into one mobile interface.",
       },
       {
-        label: "Solution",
-        text: "Details will be added after project documentation is completed.",
+        title: "Solution",
+        text: "People can search the facility catalogue, open a mapped view, read a facility record, compare facilities side by side, look up nearby facilities, and save favourites.",
+      },
+      {
+        title: "Key Features",
+        items: [
+          "Facility search covering 4,131 facilities",
+          "Interactive map showing 698 mapped facilities",
+          "Facility details",
+          "Side-by-side facility comparison",
+          "Nearby healthcare facilities",
+          "Favourites",
+        ],
+      },
+      {
+        title: "Technical Implementation",
+        text: "Built with Flutter as a mobile application for exploring healthcare facilities.",
+      },
+      {
+        title: "Project Status",
+        text: "Coursework application. Search lists 4,131 facilities, while the map shows 698 mapped facilities. Not every facility in the search list is shown on the map.",
       },
     ],
   },
