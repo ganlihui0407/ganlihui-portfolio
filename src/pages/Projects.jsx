@@ -137,41 +137,44 @@ const projects = [
     name: "Healthcare Accessibility Application",
     type: "Coursework Project",
     description: [
-      "A Flutter application for exploring healthcare facilities in Malaysia.",
+      "A Flutter-based mobile application designed to help users discover and explore public healthcare facilities across Malaysia through searchable listings, interactive maps, and detailed facility information.",
+      "The application also supports side-by-side facility comparison, location-based nearby discovery, and saved favourites, helping users explore available healthcare facilities in one convenient interface.",
     ],
-    technologies: ["Flutter"],
+    technologies: ["Flutter", "Dart"],
     screenshots: healthcareScreenshots,
+    repositoryUrl:
+      "https://github.com/MrLiam0407/healthcare-facility-accessibility-explorer",
     sections: [
       {
         title: "Project Overview",
-        text: "A Flutter application for exploring healthcare facilities in Malaysia, with search, maps, facility details, comparison, nearby facilities, and favourites.",
+        text: "A Flutter application for exploring public healthcare facilities in Malaysia. It focuses on making facility information easier to look through in one mobile interface.",
       },
       {
         title: "Problem Addressed",
-        text: "Finding a healthcare facility can mean moving between a directory, a map, and a personal shortlist. This application gathers those tasks into one mobile interface.",
+        text: "Healthcare facility information can be spread across different listings. Finding a facility can mean searching for a location, reviewing details, and comparing options as separate tasks.",
       },
       {
         title: "Solution",
-        text: "People can search the facility catalogue, open a mapped view, read a facility record, compare facilities side by side, look up nearby facilities, and save favourites.",
+        text: "The application brings facility search, map exploration, detailed facility information, side-by-side comparison, nearby discovery, and favourites into one interface.",
       },
       {
         title: "Key Features",
         items: [
-          "Facility search covering 4,131 facilities",
-          "Interactive map showing 698 mapped facilities",
-          "Facility details",
+          "Search across 4,131 healthcare facility records",
+          "Interactive map displaying 698 mapped facilities",
+          "Facility details, including available address, contact, and source information",
           "Side-by-side facility comparison",
-          "Nearby healthcare facilities",
-          "Favourites",
+          "Nearby facility discovery using location support",
+          "Saved favourites for convenient access",
         ],
       },
       {
         title: "Technical Implementation",
-        text: "Built with Flutter as a mobile application for exploring healthcare facilities.",
+        text: "Built with Flutter and Dart. Facility records are loaded from a bundled dataset and can include address, phone, and source fields. The map uses flutter_map with OpenStreetMap tiles. Nearby discovery uses geolocator for device location. Favourites are stored locally with SQLite on Android and iOS, and with SharedPreferences on other platforms.",
       },
       {
         title: "Project Status",
-        text: "Coursework application. Search lists 4,131 facilities, while the map shows 698 mapped facilities. Not every facility in the search list is shown on the map.",
+        text: "Search, map exploration, facility details, comparison, nearby discovery, and favourites are implemented. The map shows the 698 facilities that have coordinates, not all 4,131 searchable records.",
       },
     ],
   },
