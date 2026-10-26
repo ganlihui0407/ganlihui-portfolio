@@ -16,6 +16,13 @@ import healthcareFacilityDetails from "../assets/projects/healthcare-app/healthc
 import healthcareComparison from "../assets/projects/healthcare-app/healthcare-comparison.png";
 import healthcareNearby from "../assets/projects/healthcare-app/healthcare-nearby.png";
 import healthcareFavourites from "../assets/projects/healthcare-app/healthcare-favourites.png";
+import jobRecruitHomepage from "../assets/projects/job-system/01_JobRecruit_Homepage.png";
+import jobListingsAndFilters from "../assets/projects/job-system/02_Job_Listings_and_Filters.png";
+import jobCompanyDirectory from "../assets/projects/job-system/03_Company_Directory.png";
+import jobContactPage from "../assets/projects/job-system/04_Contact_Page.png";
+import jobCandidateRegistration from "../assets/projects/job-system/05_Candidate_Registration.png";
+import jobCandidateDashboard from "../assets/projects/job-system/06_Candidate_Dashboard.png";
+import jobChatInbox from "../assets/projects/job-system/07_Chat_Inbox.png";
 
 const peaceoneScreenshots = [
   { src: peaceoneHome, title: "Homepage", alt: "PeaceOne homepage" },
@@ -82,6 +89,44 @@ const healthcareScreenshots = [
     src: healthcareFavourites,
     title: "Favourites",
     alt: "Saved favourite healthcare facilities",
+  },
+];
+
+const jobSystemScreenshots = [
+  {
+    src: jobRecruitHomepage,
+    title: "Homepage",
+    alt: "JobRecruit homepage",
+  },
+  {
+    src: jobListingsAndFilters,
+    title: "Job Listings and Filters",
+    alt: "JobRecruit job listings and filters",
+  },
+  {
+    src: jobCompanyDirectory,
+    title: "Company Directory",
+    alt: "JobRecruit company directory",
+  },
+  {
+    src: jobContactPage,
+    title: "Contact Page",
+    alt: "JobRecruit contact page",
+  },
+  {
+    src: jobCandidateRegistration,
+    title: "Candidate Registration",
+    alt: "JobRecruit candidate registration page",
+  },
+  {
+    src: jobCandidateDashboard,
+    title: "Candidate Dashboard",
+    alt: "JobRecruit candidate dashboard",
+  },
+  {
+    src: jobChatInbox,
+    title: "Chat Inbox",
+    alt: "JobRecruit chat inbox",
   },
 ];
 
@@ -183,22 +228,45 @@ const projects = [
     name: "Job System",
     type: "Coursework Project",
     description: [
-      "A system development project focusing on managing job-related information and application processes.",
+      "A job recruitment web application for browsing openings, exploring companies, and managing a candidate account.",
+      "The system includes job listings and filters, a company directory, candidate registration, a candidate dashboard, a contact page, and a chat inbox.",
     ],
-    technologies: ["System Development", "Database", "Application Design"],
+    technologies: ["ASP.NET Core MVC", "Entity Framework Core", "SQL Server"],
     icon: systemIcon,
-    caseStudy: [
+    screenshots: jobSystemScreenshots,
+    repositoryUrl: "https://github.com/ganlihui0407/JobRecruit",
+    sections: [
       {
-        label: "Project Goal",
-        text: "Develop a system that manages job-related information and supports application processes efficiently.",
+        title: "Project overview",
+        text: "JobRecruit is an ASP.NET Core MVC recruitment system that brings job listings, company information, and candidate activity into one web application.",
       },
       {
-        label: "Problem",
-        text: "Details will be added after project documentation is completed.",
+        title: "Problem addressed",
+        text: "Searching for work can mean checking job listings, company information, and application activity in separate places. This system gathers those tasks into one interface.",
       },
       {
-        label: "Solution",
-        text: "Details will be added after project documentation is completed.",
+        title: "Solution",
+        text: "Candidates can filter job listings, browse a company directory, register an account, use a dashboard, contact the site, and open a chat inbox.",
+      },
+      {
+        title: "Key interfaces",
+        items: [
+          "Homepage",
+          "Job listings and filters",
+          "Company directory",
+          "Contact page",
+          "Candidate registration",
+          "Candidate dashboard",
+          "Chat inbox",
+        ],
+      },
+      {
+        title: "Technical implementation",
+        text: "Built with ASP.NET Core MVC on .NET 9 and Entity Framework Core. Application data is stored in SQL Server. Sign-in uses cookie authentication, with job seeker, employer, and administrator roles.",
+      },
+      {
+        title: "Project status",
+        text: "The homepage, job listings and filters, company directory, contact page, candidate registration, candidate dashboard, and chat inbox are implemented. The source code is not published on GitHub yet.",
       },
     ],
   },
